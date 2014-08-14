@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/ico">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+
+<meta name="keywords" content="XSS, Cross-Site Scripting, Hacking, Hackers, Χάκινγκ, Χάκερς, Ασφάλεια, Ασφάλεια Πληροφοριών, InfoSec, Client Side Attacks, Exploitation">
+<meta name="description" content="Μια απλή και συνοπτική εξήγηση του Cross-Site Scripting">
+
+<title>scriptalert1</title>
+
+<style type="text/css">
+body { font-size:18px; }
+.wrapper { max-width: 600px; margin:0 auto; }
+</style>
+<style type="text/css"></style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-38637956-2', 'scriptalert1.com');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body style="">
+<div class="wrapper">
+
+<h1>Τι είναι το Cross-Site Scripting (XSS);</h1>
+
+<p>Το Cross-Site Scripting (XSS) είναι ένας τύπος ευπάθειας (vulnerability) ο οποίος είναι <strong>πολύ διαδεδομένος</strong> και επιτρέπει σε έναν κακόβουλο χρήστη να εισάγει κακόβουλο κώδικα (JavaScript) σε έναν web browser μέσω της χρήσης μιας ευπαθούς ιστοσελίδας (web application). Ο κακόβουλος χρήστης μπορεί να στείλει τον κώδικα με διάφορους τρόπους. Μπορούν να σας ξεγελάσουν έτσι ώστε να κάνετε κλικ σε ένα link (Reflected XSS) ή να περιμένουν να επισκεφθείτε μια σελίδα η οποία περιέχει ήδη τον κακόβουλο κώδικα (Stored ή Persistent XSS).</p>
+
+<p>Αυτό το ενοχλητικό pop-up παράθυρο με το 1; Αυτό είναι απλά ένας τρόπος που κάποιοι άνθρωποι μπορούν να αποδείξουν οπτικά ότι το JavaScript τους (XSS) εκτελέστηκε. Αλλά μην αφήσετε αυτό το παράθυρο να σας ξεγελάσει, υπάρχουν πολλά περισσότερα με το XSS από αυτό.</p>
+
+<h1>Τι μπορούν να κάνουν οι hackers με το XSS;</h1>
+
+<p>Ένας hacker μπορεί να κλέψει τα “cookies” σας και να κάνει login σε μια σελίδα σα να ήσασταν εσείς!</p>
+
+<p>Μπορούν ίσως να σας ανακατευθύνουν σε μια κακόβουλη σελίδα χωρίς να το γνωρίζετε σε μια προσπάθεια να σας ξεγελάσουν έτσι ώστε να δώσετε ευάισθητα στοιχεία όπως ο αριθμός της πιστωτικής σας κάρτας.</p>
+
+<p>Μπορούν να προσθέσουν ψεύτικες login σελίδες στο ευπαθές site για να σας ξεγελάσουν να δώσετε το όνομα χρήστη (username) και τον κωδικό σας.</p>
+
+<p>Θα μπορούσαν ακόμα να χρησιμοποιήσουν το XSS για να παρακάμψουν άλλα μέτρα ασφαλείας τα οποία έχουν ενσωματωθεί στο web application ή στον browser για να σας προστατέψουν.</p>
+
+<p>Οι δυνατότητες είναι σχεδόν απεριόριστες. Να πάρουν τον έλγχο της webcam σας; Ναι! Να ακούσουν από το μικρόφωνο του υπολογιστή σας; Σίγουρα!</p>
+
+<p>Για πιο προχωρημέμενες τεχνικές δείτε το <a href="http://beefproject.com/">The Browser Exploitation Framework (BeEF)</a>.</p>
+
+<h1>Ποιοι έχουν δεχθεί επίθεση χρησιμοποιώντας XSS;</h1>
+
+<p>Το Apache Foundation, οι δημιουργοί και διαχειριστές ενός από τα πιο δημοφιλή λογισμικά στο διαδίκτυο για web servers δέχτηκαν <a href="https://blogs.apache.org/infra/entry/apache_org_04_09_2010">εισβολή</a> από μια αρχική XSS επίθεση.</p>
+
+<p>Μια XSS επίθεση στο επίσημο forum της δημοφιλούς διανομής Linux, το Ubuntu, επέτρεψε στους εισβολείς να κατεβάσουν ονόματα χρηστών (usernames), e-mail και κωδικούς από <a href="http://www.scmagazineuk.com/ubuntu-forums-back-online-after-attack-analysis-reveals-xss-tactic/article/305321/">1,82 εκατομμύρια</a> χρήστες.</p>
+
+<p>Οι XSS επιθέσεις συνήθως στοχεύουν τους χρήστες των ιστοσελίδων και τα τοπικά τους δίκτυα. Παρ’ όλα αυτά, όπως είδαμε στα παραδείγματα παραπάνω, όταν αυτοί οι χρήστες είναι διαχειριστές (administrators), τότε και οι web servers των ιστοσελίδων αυτών βρίσκονται επίσης σε κίνδυνο.</p>
+
+<p>XSS ευπάθειες ανακαλύπτονται στο Facebook, το Yahoo, το Google, το Twitter και άλλες δημοφιλείς ιστοσελίδες σε καθημερινή βάση από ανεξάρτητους ερευνητές ασφαλείας που συμμετέχουν σε «κυνήγι» bugs <a href="https://bugcrowd.com/list-of-bug-bounty-programs/">(bug bounties)</a>.</p>
+
+Εδώ θα βρείτε μια λίστα από επιθέσεις που έκαναν χρήση XSS – <a href="https://www.google.com/fusiontables/DataSource?snapid=S1158702BBoV">https://www.google.com/fusiontables/DataSource?snapid=S1158702BBoV</a>
+
+<h1>Τι μπορώ να κάνω για να προστατευτώ από το XSS;</h1>
+
+<p>Σιγουρευτείτε ότι ο browser σας είναι ενημερωμένος και ότι έχει όλες τις λειτουργίες ασφαλείας ενεργοποιημένες, όπως το φιλτράρισμα Cross-Site Scripting (XSS). Αν ο browser που χρησιμοποιείτε δεν έχει κάποιο φίλτρο XSS, όπως ο Firefox, τότε μπορείτε να κατεβασετε το <a href="https://addons.mozilla.org/en-US/firefox/addon/noscript/">NoScript</a>, ένα Πρόσθετο (add-on) φίλτρο XSS.</p>
+
+<p><strong>Προσέχετε σε τι συνδέσμους κάνετε κλικ.</strong> Ένας σύνδεσμος μπορεί να δείχνει ακίνδυνος αλλά μπορεί να περιέχει κακόβουλο κώδικα XSS.</p>
+
+<p>Αποσυνδεθείτε από τις ιστοσελίδες όταν έχετε τελειώσει καθώς δυσκολεύει τους hackers να κλέψουν τα “cookies” σας.</p>
+
+<h1>Το τεχνικό κομμάτι! Τι μπορώ να κάνω για να προστατέψω την ιστοσελίδα μου από XSS;</h1>
+
+<p>Το Cross-Site Scripting συμβαίνει όταν δεδομένα που εισάγονται σε κάποιο πεδίο εμφανίζοναι στην σελίδα χωρίς πρώτα να ελεγχθούν και/ή να κωδικοποιηθούν.</p>
+
+<p>Για παράδειγμα, αν ένας χρήστης βάζει το username του για να κάνει login και μετά το username εμφανίζεται στη σελίδα χωρίς να έχει ελεγθχεί ή κωδικοποιηθεί, τι γίνεται στη περίπτωση που το username περιέχει HTML χαρακτήρες; Ο browser δε θα μπορέσει να ξεχωρίσει το username απο το πραγματικό HTML κώδικα της σελίδας. <strong>Τα δεδομένα (το username) μπερδεύονται με τον κώδικα (HTML)!</strong> Αυτό θα μπορούσε να επιτρέψει σε έναν χρήστη να κάνει login με ένα username που περιέχει κακόβουλο κώδικα JavaScript και να τον εκτελέσει στον browser μέσα στο πλαίσιο της ιστοσελίδας.</p>
+
+<p>Σιγουρευτείτε ότι ελέγχετε το username πριν να το χρησιμοποιήσετε. Για παράδειγμα αν οι χρήστες πρέπει να έχουν μόνο αλφαριθμητικούς χαρακτήρες στα username τους τότε εφαρμόστε φιλτράρισμα. <strong>Χρησιμοποιήστε μια whitelist!</strong> Συγκρίνετε το username με γνωστά «καλά» αντί με γνωστά «κακά».</p>
+
+<p>Χρησιμοποιήστε τη σωστή κωδικοποίηση! Αν το username πρόκειται να χρησιμοποιηθεί μέσα σε HTML, τότε κωδικοποιήστε όλους τους χαρακτήρες του username με HTML κωδικοποίηση. Με αυτόν τον τρόπο ο browser θα ξέρει τι πρέπει να θεωρηθεί HTML και τι όχι. Δεν έχουν όμως όλα να κάνουν με την HTML κωδικοποιήση. Πρέπει να κωδικοποιήτε για το σωστό περιεχόμενο. Δείτε τις σελίδες παρακάτω για περισσότερες πληροφορίες.</p>
+
+<p>Ελέγχετε τις ιστοσελίδες σας για XSS προβλήματα. Υπάρχουν πολλά αυτοματοποιημένα εργαλεία που ανιχνεύουν προβλήματα που σχετίζονται με το XSS. Μπορείτε να δοκιμάσετε το λογισμικό ανοιχτού κώδικα <a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">OWASP ZAP</a>.</p>
+
+<p>Ρυθμίζετε τα session cookies σας ως <a href="https://www.owasp.org/index.php/HttpOnly">HttpOnly</a>. Αυτό λέει στον browser ότι το cookie δε θα πρέπει να είναι προσβάσιμο απο την JavaScript, βοηθώντας τους χρήστες να προστατευτούν από την κλοπή των συνεδριών τους (session).</p>
+
+<p>Η HTTP επικεφαλίδα που ονομάζεται <a href="https://www.owasp.org/index.php/Content_Security_Policy">Content Security Policy (CSP)</a> μπορεί ρυθμιστεί από τον web server να λέει στον browser τι και από που επιτρέπεται η JavaScript να εκτελείται. Χρησιμοποιεί μια whitelist!</p>
+
+<p>Τέλος, γιατί να μην εγκαταστήσετε ένα Web Application Firewall (WAF) οπώς το ανοιχτού κώδικα <a href="https://www.modsecurity.org/">mod_security</a>! Ένα WAF θα δώσει την ιστοσελίδα σας εκείνο το έξτρα επίπεδο προστασίας για να αμυνθείτε απέναντι σε κακόβουλους χρήστες αλλά δε θα πρέπει να χρησιμοποιηθεί ως η μόνη λύση κωθώς συχνά βρίσκονται τρόποι να παρακαμφούν.</p>
+
+<h1>Που μπορώ να βρω περισσότερες πληροφορίες;</h1>
+
+<p>Οι τύποι XSS που αναφέρονται στη παρούσα σελίδα (Reflected και Stored) δεν είναι οι μόνοι! Μόλις που έχουμε αγγίξει το θέμα. Θέλετε να μάθετε περισσότερα;</p>
+
+<p>Το <a href="https://www.owasp.org/index.php/Main_Page">Open Web Application Security Project (OWASP)</a> είναι μια εξαιρετική πηγή πληροφοριών για όλα τα πράγματα που σχετίζονται με την ασφάλεια των ιστοσελίδων ή web application. Ρίξτε μια ματιά στο <a href="https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)">άρθρο τους για το XSS</a> ή το <a href="https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet">XSS Prevention Cheat Sheet</a>. Για πληροφορίες σχετικά με άλλους τύπους ευπαθειών σε web applications κοιτάξτε στο <a href="https://www.owasp.org/index.php/Top_10_2013-Top_10">OWASP Top 10</a>.</p>
+
+<p>Ευχαριστούμε για την ανάγνωση,<br>
+<a href="http://www.dewhurstsecurity.com/">Ryan Dewhurst</a> &amp; <a href="http://www.tmacuk.co.uk/">Thomas MacKenzie</a> – Μετάφραση: Νίκος Λαλέας</p>
+
+<p>---</p>
+<p><em>Η σελίδα αυτή σχεδιάστηκε για να απλοποιήσει το XSS, να κάνει την κατανόηση των προβλημάτων που σχετίζονται με το XSS ευκολότερη.</em></p>
+<p><em>Ο σχεδιασμός της ιστοσελίδας εμπνέυστηκε από εδώ: <a href="http://justinjackson.ca/words.html">http://justinjackson.ca/words.html</a></em></p>
+<p>---</p>
+
+<p>Thanks to Nikos Laleas for this translation. <a href="index.html">English version here</a>.</p>
+
+</div>
+
+
+</body>
+</html>

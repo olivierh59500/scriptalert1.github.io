@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/ico">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+
+<meta name="description" content="Una explicación simple y breve de Cross-Site Scripting">
+<meta name="keywords" content="XSS, Cross-Site Scripting, Hacking, Hackers, Seguridad, Securidad de la Información, InfoSec, Ataques a clientes, Explotación">
+<meta name="author" content="Thomas MacKenzie">
+<meta name="author" content="Ryan Dewhurst">
+
+<title>scriptalert1</title>
+
+<style type="text/css">
+body { font-size:18px; }
+.wrapper { max-width: 600px; margin:0 auto; }
+</style>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-38637956-2', 'scriptalert1.com');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+
+<h1>¿Qué es Cross-Site Scripting (XSS)?</h1>
+
+<p>Cross-Site Scripting (XSS) es una vulnerabilidad que está <strong>ampliamente 
+
+extendida</strong> y permite insertar código malicioso (JavaScript) a un atacante en 
+
+tu navegador usando una aplicación web vulnerable. El atacante puede mandar su 
+
+código malicioso de varias formas. Puede engañarte haciéndote hacer click en un 
+
+enlace (XSS Reflejado), or esperar a que visites una página que ya tiene el código 
+
+malicioso incluido en ella (XSS Almacenado o Persistente).</p>
+
+<p>¿Qué es esa molesta ventana con el número 1? Es simplemente una forma en la que 
+
+la gente demuestra visualmente que su código en JavaScript (XSS) ha sido ejecutado. 
+
+Pero no dejes que esa inocente ventana te engañe. ¡XSS es mucho más que eso!</p>
+
+<h1>¿Qué hacen los hackers con XSS?</h1>
+
+<p>¡Un hacker puede robar tus 'cookies' y acceder a la aplicación como tu mismo!</p>
+
+<p>Puede redireccionarte a una página web maliciosa, sin que te dés cuenta, en un 
+
+intento de engañarte para que reveles información personal como tus datos 
+
+bancarios.</p>
+
+<p>Puede añadir páginas falsas de login a la aplicación vulnerable para engañarte de 
+
+forma que reveles tu nombre de usuario y contraseña.</p>
+
+<p>Puede incluso usar XSS para evitar otras medidas de seguridad que hayan sido 
+
+desarrolladas en la aplicación y en tu navegador para protegerte.</p>
+
+<p>Las posibilidades son casi ilimitadas. ¿Acceder a tu webcam? ¡Si! ¿Escuchar lo 
+
+que se oye en el micrófono de tu ordenador? ¡Claro!</p>
+
+<p>Para ataques avanzados echa un vistazo a <a href="http://beefproject.com/">El 
+
+Framework de Explotación de Navegadores (BeEF)</a></p>
+
+<h1>¿Quién ha sido hackeado con XSS?</h1>
+
+<p>Los servidores de la fundación Apache, los creadores y mantenedores de uno de los 
+
+más populares servidores web en Internet, <a 
+
+href="https://blogs.apache.org/infra/entry/apache_org_04_09_2010">fueron 
+
+hackeados</a> en un ataque que empezó con XSS.</p>
+
+<p>Un ataque XSS en el foro oficial de Ubuntu, un popular sistema operativo Linux, 
+
+permitió a los atacantes descargar los usuarios, direcciones de correo y contraseñas 
+
+de <a href="http://www.scmagazineuk.com/ubuntu-forums-back-online-after-attack-
+
+analysis-reveals-xss-tactic/article/305321/">1.82 millones</a> de usuarios.</p>
+
+<p>Los ataques XSS normalmente se dirigen a los usuarios de la aplicación y sus 
+
+redes locales; sin embargo, tal y como se puede ver en los ejemplos anteriores, 
+
+cuando los usuarios son administradores los servidores web también están en 
+
+peligro.</p>
+
+<p>Las vulnerabilidades XSS se descubren diariamente en Facebook, Yahoo, Google, 
+
+Twitter y otras páginas web de renombre por investigadores de seguridad que 
+
+participan en <a href="https://bugcrowd.com/list-of-bug-bounty-programs/">programas 
+
+de recompensa por errores (bug bounties)</a>.</p>
+
+Aquí hay una lista de otros ataques usando XSS - <a 
+
+href="https://www.google.com/fusiontables/DataSource?
+
+snapid=S1158702BBoV">https://www.google.com/fusiontables/DataSource?
+
+snapid=S1158702BBoV</a>
+
+<h1>¿Qué puedo hacer para protegerme de XSS?</h1>
+
+<p>Asegúrate de que tu navegador web se mantenga actualizado y de que tenga todas 
+
+sus medidas de seguridad habilitadas, como por ejemplo filtros contra Cross-Site 
+
+Scripting (XSS). Si tu navegador no tiene un filtro contra XSS, como Firefox, puedes 
+
+descargar un complemento que proporciona protección contra XSS llamado <a 
+
+href="https://addons.mozilla.org/en-US/firefox/addon/noscript/">NoScript</a>.</p>
+
+<p>Ten <strong>cuidado con los enlaces en los que haces click</strong>. Aunque 
+
+parezca inofensivo, un enlace puede contener código malicioso con XSS.</p>
+
+<p>Finaliza la sesión en páginas web tan pronto como acabes de usarlas, esto hace 
+
+más difícil que los hackers roben tus 'cookies'.</p>
+
+<h1>¡La parte técnica! ¿Que puedo hacer para proteger mi aplicación web de XSS?</h1>
+
+<p>Cross-Site Scripting ocurre cuando información de fuentes no confiables se 
+
+incluye en una página sin ser primero filtrada y/o correctamente codificada.</p>
+
+<p>Por ejemplo, si un usuario proporciona su nombre de usuario para iniciar su 
+
+sesión y la aplicación muestra este nombre de usuario sin filtrado y/o 
+
+codificación... ¿Qué pasa si el nombre de usuario contiene caracteres HTML? El 
+
+navegador no podrá ver la diferencia entre el nombre de usuario y el código HTML 
+
+válido de la aplicación. <strong>¡La información (el nombre de usuario) se confunde 
+
+con el código (el HTML legítimo)!</strong> Esto podría permitir a un usuario iniciar 
+
+su sesión utilizando un nombre de usuario que contenga código JavaScript malicioso y 
+
+que este se ejecute en el navegador en el contexto de tu aplicación web.</p>
+
+<p>Asegúrate de que filtras el nombre de usuario antes de utilizarlo, por ejemplo, 
+
+si el nombre de usuario solo puede contener caracteres alfanuméricos entonces valida 
+
+que esto sea así. <strong>¡Utiliza una lista blanca!</strong> Compara el nombre de 
+
+usuario contra "buenos caracteres conocidos" en vez de "malos caracteres 
+
+conocidos".</p>
+
+<p>¡Utiliza la codificación correcta! Si el nombre de usuario va a ser mostrado en 
+
+código HTML, entonces codifica todos los caracteres del nombre de usuario para HTML. 
+
+Así el navegador sabrá qué es lo que debe renderizarse como HTML y qué no. Sin 
+
+embargo, ¡la codificación HTML no lo es todo! Debes codificar para el "contexto" de 
+
+renderización correcto. Mira los enlaces abajo para más información.</p>
+
+<p>Escanea tus aplicaciones buscando XSS. Hay muchos escaneadores automatizados de 
+
+seguridad web que encontrarán XSS en aplicaciones web. Podrías probar <a 
+
+href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">OWASP ZAP</a>, 
+
+que es un programa de código abierto.
+
+<p>Crea las cookies de sesión con la propiedad <a 
+
+href="https://www.owasp.org/index.php/HttpOnly">HttpOnly</a> habilitada. Esto indica 
+
+al navegador que la cookie no puede ser leída por JavaScript, lo que ayuda a 
+
+proteger a tus usuarios contra robos de sesión.</p>
+
+<p>Un encabezado HTTP llamado <a 
+
+href="https://www.owasp.org/index.php/Content_Security_Policy">Content Security 
+
+Policy (CSP)</a> puede ser enviado por el servidor web para indicar al navegador que 
+
+código JavaScript puede ejecutarse y desde donde. ¡Utiliza una lista blanca!</p>
+
+<p>Finalmente, ¡por qué no instalar un Firewall de Aplicaciones Web (WAF) como <a 
+
+href="https://www.modsecurity.org/">mod_security</a>, que es un proyecto de código 
+
+abierto! Un WAF proporcionará a tu aplicación una capa más de seguridad para 
+
+defenderte de esos atacantes pero solo debe usarse como una medida de defensa en 
+
+profundidad y no como la única solución ya que las medidas de seguridad pueden ser 
+
+evitadas de forma frecuente.</p>
+
+<h1>¿Dónde puedo encontrar más información?</h1>
+
+<p>¡Los dos tipos de XSS mencionados en esta página (Reflejado y Almacenado) no son 
+
+los unicos dos! Solo hemos introducido el tópico aquí. ¿Quieres averiguar más?</p>
+
+<p>El <a href="https://www.owasp.org/index.php/Main_Page">Proyecto Abierto de 
+
+Seguridad Web (OWASP)</a> es una gran fuente de información para todos los temas 
+
+relacionados con la seguridad de aplicaciones web. Mira su <a 
+
+href="https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)">artículo wiki 
+
+sobre XSS</a> o su <a href="https://www.owasp.org/index.php/XSS_
+
+(Cross_Site_Scripting)_Prevention_Cheat_Sheet">Hoja de referencia rápida para la 
+
+prevención de XSS</a>. Respecto a información sobre otros tipos de vulnerabilidades 
+
+de aplicaciones web mira el <a href="https://www.owasp.org/index.php/Top_10_2013-
+
+Top_10">OWASP Top 10</a>.</p>
+
+<p>Gracias por leer estas líneas,<br />
+<a href="http://www.dewhurstsecurity.com/">Ryan Dewhurst</a> & <a href="http://www.tmacuk.co.uk/">Thomas MacKenzie</a></p>
+
+<p>---</p>
+<p><em>Los objetivos de esta página son la sencillez, usando Español simple, de forma breve y precisa.</em></p>
+<p><em>El diseño de esta página fue inspirado por <a href="http://justinjackson.ca/words.html">http://justinjackson.ca/words.html</a></em></p>
+<p>---</p>
+
+<p>Thanks to Abraham Aranguren for this translation and Miguel Dilaj for his comments. <a href="index.html">English version here</a>.</p>
+
+</div>
+</body>
+</html>

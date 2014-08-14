@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/ico">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+
+<meta name="description" content="A simple and concise explanation of Cross-Site Scripting">
+<meta name="keywords" content="XSS, Cross-Site Scripting, Hacking, Hackers, Security, Information Security, InfoSec, Client Side Attacks, Exploitation">
+<meta name="author" content="Thomas MacKenzie">
+<meta name="author" content="Ryan Dewhurst">
+
+<title>scriptalert1</title>
+
+<style type="text/css">
+body { font-size:18px; }
+.wrapper { max-width: 600px; margin:0 auto; }
+</style>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-38637956-2', 'scriptalert1.com');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+
+<h1>Co to jest Cross - Site Scripting ( XSS ) ?</h1>
+
+<p>Cross- Site Scripting ( XSS ) to rodzaj luki w bezpieczenstwie, która jest bardzo rozpowszechniona. Pozwala ona atakującemu wstawić złośliwy kod ( JavaScript ) w przeglądarce internetowej poprzez wykorzystanie niezabezpieczonej aplikacji internetowej. Atakujący może dostarczyć szkodliwy kod w wiele różnych sposobów. Może nakłonić użytkownika do kliknięcia na link (tak zwany reflected / non-persistent XSS ), lub poczekać aż użytkownik odwiedzeni stronę internetową zawierającą jego złośliwy kod (stored / persistent XSS ).</p>
+
+<p>Co mają do tego irytujące wyskakujące okienka ( pop-ups) z numerem 1 czy innym tekstem ? To prosty sposób, w jaki można udowodnić, że aplikacja jest wrażliwa na atak XSS. Tylko nie daj się zwieść ich niewiności, atakami XSS można osiągnąć wiele więcej.</p>
+
+<h1>Co hackerzy mogą osiągnąć za pomocą XSS ?</h1>
+
+<p>Hacker może wykraść  twoje ciasteczka internetowe, ktore są używane do uwierzytelnionia Cię na stronach internetowych !</p>
+
+<p>Atakujący może dodać sfałyszowone stron logowania do aplikacji w celu skłonienie użytkownika do ujawnienia jego nazwy użytkownika i hasła.</p>
+
+<p>Ataki XSS są w stanie, bez twojej wiedzy, przekierować twoją przeglądarkę  do złośliwych witryn internetowych. Celem jest nakłonienie użytkownika do ujawnienia poufnych informacji, takich jak jego dane bankowe. </p>
+
+<p>XSS może być nawet użyty do ominięcia środków bezpieczeństwa, które są wbudowane w aplikację czy przeglądarkę internetową, aby cię chronić .</p>
+
+<p>Możliwości są niemal nieograniczone. Przejąć kamerę internetową ? Tak ! Podsłuchiwać używając twojego mikrofonu na komputerze ? Jasne !</p?
+
+<p>Do zaawansowanych ataków czesto jest wykorzystywane narzedzie zwane <a href="http://beefproject.com/">The Browser Exploitation Framework (BeEF)</a>.</p>
+
+<h1>Kto został zhackowany za pomocą XSS ?</h1>
+
+<p>The Apache Foundation, twórcy jednego z najbardziej popularnych serwerów aplikacji WWW mieli  bezpieczeństwo swoich <a href="https://blogs.apache.org/infra/entry/apache_org_04_09_2010">serwerów skompromitowane</a> za pomocą ataku XSS .</p>
+
+<p>Atak XSS na oficjalnym forum popularnego systemu operacyjnego Linux , Ubuntu , pozwolił napastnikowi pobrać nazwy użytkowników , adresy e-mail i hasła do <a href="http://www.scmagazineuk.com/ubuntu-forums-back-online-after-attack-analysis-reveals-xss-tactic/article/305321/">1.820.000</a> swoich użytkowników.</p>
+
+<p>Ataki XSS zazwyczaj skupiają się na użytkownikach aplikacji i ich lokalnych sieciach , jednak , jak widać na powyższych przykładach, gdy użytkownicy ci mają status administratora, same serwery internetowe są również zagrożone.</p>
+
+<p>Luki XSS są odkrywane w serwisach Facebook , Yahoo , Google, Twitter i innych witrynach o wysokim profilu codziennie. Często przez niezależnych specjalistów w bezpieczeństwie komputerowym uczestniczących w tak zwanych <a href="https://bugcrowd.com/list-of-bug-bounty-programs/">bug bounties.</p>
+
+<p>Oto lista innych hacków za pomocą XSS - <a href="https://www.google.com/fusiontables/DataSource?snapid=S1158702BBoV">https://www.google.com/fusiontables/DataSource?snapid=S1158702BBoV</a></p>
+
+<h1>Co można zrobić, aby chronić się przed XSS ?</h1>
+
+Upewnij się, że Twoja przeglądarka jest zawsze aktualizowana i że wszystkie jej funkcje bezpieczeństwa są włączone, takie jak filtrowanie Cross- Site Scripting ( XSS ). Jeśli Twoja przeglądarka nie posiada filtr XSS, jak na przykład Firefox, możesz pobrać add-on o nazwie <a href="https://addons.mozilla.org/en-US/firefox/addon/noscript/">NoScript</a>.</p>
+
+<p><b>Zwracaj uwagę na co klikasz</b>. Nawet niegroźnie wyglądający link, może zawierać szkodliwy skrypt.</p>
+
+<p>Wyloguj się z witryn internetowych, gdy skończysz z nimi, to utrudnia hackerom wykraść "cookies".</p>
+
+<h1>Jestem tworcą stron internetowych. Co mogę zrobić, aby ochronić moją aplikację internetową przed XSS ?</h1>
+
+<p>Cross-site scripting występuje, gdy dane wprowadzane przez użytkownika na stronę internetową, nie są filtrowane i / lub odpowiednio zakodowane .</p>
+
+<p>Na przykład, załóżmy że użytkownik dostarcza swoją nazwę użytkownika do zalogowania, a następnie aplikacja wyświetla ten login bez filtrowania i / lub kodowania. Co się stanie, gdy nazwa użytkownika zawiera znaki HTML ? Przeglądarka nie będzie w stanie odróżnić co jest loginem, a co jest kodem strony internetowej. Kod HTML czy JavaScript użytkownika zostanie umieszczone w  kodzie twojej strony ! Upewnij się, że filtrujesz wprowadzane znaki, nazwa użytkownika nie powinna zawierać innych znaków niż alfa-numeryczne. W tym celu możesz użyć <b>white-listing</b>. </p>
+
+<p>Użyj odpowiedniego kodowania ! Jeśli nazwa użytkownika może wystąpić gdzieś w kodzie HTML  twojej strony, zakoduj wszystkie znaki w formacie HTML. W ten sposób przeglądarka będzie wiedzieć, co ma być wyświetlany jako HTML a co nie. To nie wszystko na temat kodowania. Odwieź poniższe linki w celu uzyskania dodatkowych informacji.</p>
+
+<p>Przeskanuj swoją aplikację pod kontem problemów XSS. Istnieje wiele automatycznych skanerów bezpieczeństwa aplikacji internetowych, które mogą wykryć problemy XSS. Na przykład <a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">OWASP ZAP</a>.</p>
+
+<p>Sprawdź czy ciasteczka uwierzytelniające na twojej stronie mają ustawione flagi <a href="https://www.owasp.org/index.php/HttpOnly">HttpOnly</a> i <a href="https://www.owasp.org/index.php/SecureFlag">Secure</a>. HTTPOnly mówi przeglądarce, że cookies nie są dostępne dla JavaScriptu, co pomaga ochronić je przed atakami XSS. Z kolei flaga Secure nie pozwala na ich wysyłanie poza protokołem HTTPS.</p>
+
+<p>Nagłówek HTTP o nazwie <a href="https://www.owasp.org/index.php/Content_Security_Policy">Content Security Policy (CSP)</a> może być ustawiony przez serwer WWW żeby określić przeglądarkom internetowym gdzie obsługa JavaScript jest dozwolona. CSP używa white-listing. </p>
+
+<p>Wreszcie , dlaczego nie zainstalować Web Application Firewall ( WAF ) , takich jak <a href="https://www.modsecurity.org/">mod_security</a> Open Source ! WAF daje aplikacji dodatkową warstwę obrony przed tymi atakami, aczkolwiek nie powinien być używany jako jedyna ochrona jakoże żaden WAF nie jest doskonały. </p>
+
+<h1>Gdzie mogę znaleźć więcej informacji ?</h1>
+
+<p>Dwa typy XSS zamieszczone na tej stronie (Reflected and Stored) nie są jedynymi rodzajami !</p>
+
+<p>Jeśli chcesz dowiedzieć się wiecej <a href="https://www.owasp.org/index.php/Main_Page">Open Web Application Security Project (OWASP)</a> jest doskonałym źródłem informacji dla wszystkich rzeczy związanych z bezpieczeństwem aplikacji internetowych. Sprawdź ich artykuł na temat <a href="https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29">XSS</a> i ich <a href="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet">XSS Prevention Cheat Sheet</a>. Aby uzyskać informacje na temat innych rodzajów luk bezpieczeństwa w aplikacjach internetowych, zapoznaj się z <a href="https://www.owasp.org/index.php/Top_10_2013-Top_10">OWASP Top 10</a>. </p>
+
+<p>Dziękujemy za twój czas,<br />
+
+<a href="http://www.dewhurstsecurity.com/">Ryan Dewhurst & <a href="http://www.thomasmackenzie.co.uk">Thomas MacKenzie</a></p>
+
+<p>---</p>
+
+<p><em>Celem tej strony było przestawienie tematu w prostym do zrozumienia jezyku. </em></p>
+
+<p><em>Konstrukcja tej strony została zainspirowana przez <a href="http://justinjackson.ca/words.html">http://justinjackson.ca/words.html</a></em></p>
+
+<p>---</p>
+
+<p>Thanks to <a href="https://twitter.com/JanZamoysky">@JanZamoysky</a> for this translation. <a href="index.html">English version here</a>.</p>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/ico">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+
+<meta name="description" content="A simple and concise explanation of Cross-Site Scripting">
+<meta name="keywords" content="XSS, Cross-Site Scripting, Hacking, Hackers, Security, Information Security, InfoSec, Client Side Attacks, Exploitation">
+<meta name="author" content="Thomas MacKenzie">
+<meta name="author" content="Ryan Dewhurst">
+
+<title>scriptalert1</title>
+
+<style type="text/css">
+body { font-size:18px; }
+.wrapper { max-width: 600px; margin:0 auto; }
+</style>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-38637956-2', 'scriptalert1.com');
+  ga('send', 'pageview');
+</script>
+</head>
+
+<body>
+<div class="wrapper">
+
+<h1>Was ist Cross-Site Scripting (XSS)?</h1>
+
+<p>Cross-Site Scripting (XSS) ist eine Art von Schwachstelle, die <strong>sehr weit verbreitet</strong> ist und es einem Angreifer erlaubt, schädlichen Code (JavaScript) über die Verwendung einer verwundbaren Webanwendung in Ihren Browser einfügen. Der Angreifer kann den Schadcode auf verschiedene Weise einschleusen. Dies kann über einen vermeintlich harmlosen Link (Reflektiertes XSS) geschehen oder indem die Angreifer darauf warten bis Sie eine Seite, welche bereits Schadcode enthält (Gespeichertes oder Persistent XSS), besuchen.</p>
+
+<p>Das lästige Pop-up-Fenster mit der Nummer 1 als Inhalt? Das ist nur eine Möglichkeit, die einige Menschen nutzen, um visuell zu verifizieren, dass ihr Javascript (XSS) ausgeführt wurde. Aber lassen Sie sich durch das unspektakulären Pop-up-Fenster nicht täuschen, XSS kann mehr als das!</p>
+
+<h1>Was können Hacker mit XSS tun?</h1>
+
+<p>Ein Hacker könnte Ihre "Cookies" stehlen und sich bei der Anwendung für Sie ausgeben.</p>
+
+<p>Angreifer könnten Sie, ohne das Sie es bemerken, zu einer bösartigen Website umleiten. So wird versucht Sie zur Herausgabe von sensiblen Informationen, wie beispielsweise ihren Bankdaten, zu verleiten.</p>
+
+<p>Sie könnten gefälschte Login-Seiten zu verwundbaren Anwendung hinzufügen, um Sie so dazu zu verleiten Ihren Benutzernamen und Ihr Passwort preiszugeben.</p>
+
+<p>Sie könnten XSS sogar dazu verwenden, andere Sicherheitsmaßnahmen, die zu Ihrem Schutz in die Anwendung und Ihren Web-Browser integriert sind, zu umgehen.</p>
+
+<p>Die Möglichkeiten sind fast grenzenlos. Ihre Webcam übernehmen? Ja! Über das Mikrofon auf Ihrem Computer mithören? Sicher!</p>
+
+<p>Für fortgeschrittene Angriffe schauen Sie sich das <a href="http://beefproject.com/">"The Browser Exploitation Framework (BeEF)"</a> an.</p>
+
+<h1>Wer wurde bereits mit XSS gehackt?</h1>
+
+<p>Die Server der Apache Foundation, den Erfindern und Entwicklern einer der beliebtesten Web-Server-Software im Internet, wurden durch einen anfänglichen XSS-Angriff <a href="https://blogs.apache.org/infra/entry/apache_org_04_09_2010">kompromittiert</a>.</p>
+
+<p>Ein XSS-Angriff aus das offizielle Forum des beliebten Linux-Betriebssystem Ubuntu erlaubte den Angreifern, die Nutzernamen, E-Mail-Adressen und Passwörter von <a href="http://www.scmagazineuk.com/ubuntu-forums-back-online-after-attack-analysis-reveals-xss-tactic/article/305321/">1,82 Millionen</a> Nutzern herunterzuladen.</p>
+
+<p>XSS-Angriffe zielen in der Regel auf die Benutzer der Anwendung und ihre lokalen Netzwerke. Wie aber in den obigen Beispielen zu sehen ist, wenn die Benutzer Administratoren sind, dann sind die Webserver der Anwendung ebenfalls in Gefahr.</p>
+
+<p>XSS-Schwachstellen werden täglich auf Facebook, Yahoo, Google, Twitter und anderen hochkarätigen Websites von unabhängigen Sicherheitsexperten, im Rahmen sogenannter <a href="https://bugcrowd.com/list-of-bug-bounty-programs/">"Bug Bounty"</a> Programme, entdeckt.</p>
+
+<p>Hier ist eine Liste von weiteren Hacks mit XSS - <a href="https://www.google.com/fusiontables/DataSource?snapid=S1158702BBoV">https://www.google.com/fusiontables/DataSource?snapid=S1158702BBoV</a></p>
+
+<h1>Was kann ich tun, um mich gegen XSS zu schützen?</h1>
+
+<p>Stellen Sie sicher, dass Ihr Webbrowser immer auf dem aktuellsten Stand ist und dass dort alle Sicherheitsfunktionen aktivert sind, wie beispielsweise der Cross-Site Scripting (XSS) Filter. Wenn Ihr spezieller Browser nicht über einen XSS Filter verfügt, wie etwa Firefox, dann können Sie ein XSS-Filter Add-on namens <a href="https://addons.mozilla.org/en-US/firefox/addon/noscript/">NoScript</a> herunterladen.</p>
+
+<p><strong>Seien Sie vorsichtig, auf welche Links Sie klicken.</strong> Ein Link kann harmlos aussehen, aber mit bösartigen Inhalten präpariert sein oder darauf verweisen.</p>
+
+<p>Melden Sie sich von Webseiten ab, wenn Sie auf diese fertig sind. Dies macht es für Hacker schwieriger Ihre "Cookies" zu stehlen.</p>
+
+<h1>Die technische Part! Was kann ich tun, um meine Webanwendung gegen XSS zu schützen?</h1>
+
+<p>Cross-Site Scripting tritt auf, wenn nicht vertrauenswürdige Eingaben auf einer Seite ausgegeben werden, ohne das diese vorher ausreichend bereinigt und / oder adequat kodiert wurden.</p>
+
+<p>Was passiert zum Beispiel, wenn ein Benutzer seinen Beutzernamen für die Anmeldung eingibt, dieser HTML-Zeichen enthält und Sie diesen Benutzernamen dann anzeigen, ohne ihn vorher zu bereinigen und / oder zu kodieren? Der Webbrowser wird nicht in der Lage sein, den Unterschied zwischen dem Benutzernamen und dem gültigen HTML-Code der Seite zu erkennen. <strong>Daten (der Benutzername) werden mit Code (HTML) vermischt!</strong> Dies könnte damit einem Benutzer erlauben, sich mit einem Benutzernamen, der schädliches Javascript enthält, anzumelden und es im Browser, im Kontext der Web-Anwendung, ausführen zu lassen.</p>
+
+<p>Stellen Sie immer sicher, dass Sie den Benutzernamen bereinigen. Wenn zum Beispiel die Benutzer nur alphanumerische Zeichen in ihren Beutzernamen verwenden sollen, dann erzwingen Sie dies mit einer Bereinigung der Eingabe. <strong>Verwenden Sie eine "Whitelist"!</strong> Vergleichen Sie den Benutzernamen gegen Eingaben, von denen Sie wissen das sie ungefährlich sind, und nicht gegen Eingaben, von denen Sie wissen das diese bösartig sind.</p>
+
+<p>Benutzen Sie die richtige Kodierung! Wenn der Benutzername innerhalb von HTML verwendet wird, dann kodieren Sie alle Zeichen des Benutzernamens als HTML. Auf diese Weise wird der Browser wissen, was als HTML interpretiert werden soll und was nicht. Es geht aber nicht nur um HTML-Codierung! Sie müssen die Kodierung immer nach dem korrekten Kontext wählen, für den die Ausgabe bestimmt ist. Für weitere Informationen verwenden die die Links weiter unten.</p>
+
+<p>Prüfen Sie ihre Anwendungen auf XSS-Schwachstellen. Es gibt viele automatisierte Schwachstellen-Scanner im Internet, die XSS-Probleme in Webapplikationen erkennen können.   Sie könnten beispielsweise das Open Source Programm <a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">OWASP ZAP</a> ausprobieren.</p>
+
+<p>Setzen Sie Ihre Session-Cookies mit dem <a href="https://www.owasp.org/index.php/HttpOnly">HTTPOnly</a> Attribut. Dies teilt dem Browser mit, dass auf das Cookie nicht über JavaScript zugegriffen werden darf, was den Benutzern hilft, ihre Sitzungen vor Diebstahl zu schützen.</p>
+
+<p>Ein HTTP-Header namens <a href="https://www.owasp.org/index.php/Content_Security_Policy">Content Security Policy (CPS)</a> kann vom Webserver gesetzt werden, und den Webbrowser anweisen welches Javascript erlaubt ist und wo es ausgeführt werden darf. Hierbei wird eine Whitelist verwendet!</p>
+
+<p>Schlussendlich, warum nicht eine Web Application Firewall (WAF) installieren, wie die Open-Source WAF <a href="https://www.modsecurity.org/">mod_security</a> für Apache. Eine WAF stellt Ihrer Anwendung eine zusätzliche Verteidigungsschicht gegen diese Angreife zur Verfügung, sollte aber in einer soliden Verteidigungsstrategie und nicht als der einzige Schutz verwendet werden, da desöfteren Wege gefunden werden, den Schutz einer WAF zu umgehen.</p>
+
+<h1>Wo finde ich weitere Informationen?</h1>
+
+<p>Die zwei, auf dieser Seite erwähnten, Arten von XSS (Reflektiert und gespeichert) sind nicht die Einzigen! Wir haben das Thema nur angetastet. Möchten Sie mehr wissen?</p>
+
+<p>Das <a href="https://www.owasp.org/index.php/Main_Page">Open Web Application Security Project (OWASP)</a> ist eine hervorragende Ressource für alle Dinge, welche die Sicherheit von Webanwendungen betreffen. Sehen Sie sich deren <a href="https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)">Wiki-Artikel über XSS</a> oder die <a href="https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet">Tipps und Tricks zur Vermeidung</a> von XSS doch mal genauer an. Für Informationen zu anderen Arten von Schwachstellen in Webanwendugen werfen Sie einen Blick auf die <a href="https://www.owasp.org/index.php/Top_10_2013-Top_10">OWASP Top 10</a>.</p>
+
+<p>Danke fürs Lesen,<br />
+<a href="http://www.dewhurstsecurity.com/">Ryan Dewhurst</a> & <a href="http://www.tmacuk.co.uk/">Thomas MacKenzie</a></p>
+
+<p>---</p>
+<p><em>Ziel dieser Seite ist es, die Dinge einfach zu halten, einfache Sprache zu verwenden und dabei kurz und korrekt zu sein.</em></p>
+<p><em>Das Design dieser Seite wurde inspiriert von <a href="http://justinjackson.ca/words.html">http://justinjackson.ca/words.html</a></em></p>
+<p>---</p>
+
+<p>Thanks to <a href="http://www.00010111.at/">b00010111</a> and <a href="http://expandier.co.uk/blog">Christopher Simpson</a> for this translation. <a href="index.html">English version here</a>.</p>
+
+</div>
+</body>
+</html>
