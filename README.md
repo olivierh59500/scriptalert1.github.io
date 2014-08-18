@@ -8,13 +8,23 @@ The website aims to have as many translations as possible. Please issue pull req
 The current translations are:
 
 English (Main Translation) - thanks to Thomas MacKenzie (@twmackenzie) and Ryan Dewhurst (@ethicalhack3r)
+
 Greek Translation - thanks to Nikos Laleas
+
 Spanish Translation - thanks to Abraham Aranguren
+
 French Translation - thanks to Lagarde Languages
+
 German Translation - thanks to b00010111 and Christopher Simpson
+
 Italian Translation - thanks to Giovanni Cattani
+
 Norwegian Translation - thanks to Kai Roer
+
 Arabic Translation - thanks to Abdulkarim Zidani
+
 Polish Translation - thanks to @JanZamoysky
+
 Dutch Translation - thanks to @bartblaze
+
 Swedish Translation - thanks to Mathias Karlsson
